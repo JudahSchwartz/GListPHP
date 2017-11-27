@@ -2,10 +2,11 @@
 require 'PHPMailer-master/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->SMTPSecure = 'ssl';
+$mail->SMTPSecure = 'tls';//ssl tls
 $mail->SMTPAuth = true;
+$mail->SMTPDebug = 2;
 $mail->Host = 'smtp.gmail.com';
-$mail->Port = 465;
+$mail->Port = 587;//465 587
 $mail->Username = 'judahschspam@gmail.com';
 $mail->Password = 'hoopdyloopdy';
 $mail->setFrom('judahschspam@gmail.com');
@@ -18,10 +19,4 @@ if (!$mail->send()) {
 } else {
     echo "SUCCESS";
 }
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
